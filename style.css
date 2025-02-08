@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Kaisei+Decol&display=swap');
+
+/* звездочки на фоне */
+#particles-js {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  overflow: hidden;
+}
+
+body {
+  background: #040404;
+  font-family: 'Inknut Antiqua', serif;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+}
+
+.main {
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.bio {
+  display: flex;
+  gap: 25px;
+  background: rgba(218, 175, 255, 0.02);
+  border-radius: 30px;
+  padding: 25px;
+  box-shadow: 0 0 55px 0 rgba(222, 184, 255, 0.5);
+}
+
+.bio__content {}
+
+.bio__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.bio__head-img {}
+
+.bio__head-text {}
+
+.bio__nav {}
+
+.bio__nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+
+.bio__nav-item {}
+
+.bio__nav-item a {
+  max-width: 272px;
+  height: 47px;
+  border: 2px solid rgba(218, 175, 255, 0.5);
+  border-radius: 100px;
+  background: rgba(218, 175, 255, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(218, 175, 255, 0.49);
+  transition: all 0.5s;
+  position: relative;
+}
+.bio__nav-item a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  border-radius: 100px;
+  background: rgba(218, 175, 255, 0.49);
+  transition: transform 0.5s;
+}
+
+.bio__nav-item a:hover {
+}
+.bio__nav-item a:hover::after {
+  width: 100%;
+  transform: scaleX(1);
+  transform-origin: left;
+
+}
+
+.bio__img-wrapper {
+  border-radius: 20px;
+  max-width: 523px;
+  height: 415px;
+  background: url(./img/git-avatar.jpg) center center / cover no-repeat;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.bio__img-title {
+  font-size: 52px;
+  letter-spacing: -0.13em;
+  text-align: center;
+  color: #fff;
+  font-family: 'Kaisei Decol', serif;
+  grid-row: 2;
+
+}
+
+.bio__img-link {
+  grid-row: 3;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+
+}
+.bio__img-wrapper--mobile {
+  display: none;
+}
+
+.footer {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__text {}
+
+
+@media (max-width: 860px) {
+  .bio {
+    flex-direction: column;
+    align-items: center;
+    border-radius: unset;
+    box-shadow: none;
+    background: none;
+    padding: 50px;
+  }
+
+  .bio__nav-item a {
+    max-width: 100%;
+    height: 73px;
+  }
+
+  .bio__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main {
+    margin-bottom: 0;
+  }
+
+  .footer {
+    display: none;
+  }
+  .bio__head-img {
+    max-width: 103px;
+    height: auto;
+  }
+  .bio__head-text {
+    max-width: 307px;
+    height: auto;
+  }
+}
+
+@media (max-width: 550px) {
+  .bio__img-wrapper {
+    display: none;
+  }
+  .bio__img-wrapper--mobile {
+    display: block;
+  }
+}
