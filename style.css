@@ -122,6 +122,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: end;
+  color: #fff !important;
 
 }
 .bio__img-wrapper--mobile {
